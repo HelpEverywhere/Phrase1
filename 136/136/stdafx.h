@@ -14,6 +14,9 @@
 #include "closest.h"
 #include "sum.h"
 #include "last-digit.h"
+#include "telegram.h"
+#include "replicate.h"
+
 
 #include <stdio.h>
 #include <tchar.h>

@@ -45,6 +45,12 @@
     <ClInclude Include="last-digit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="telegram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="replicate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -66,6 +72,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="last-digit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="telegram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="replicate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
