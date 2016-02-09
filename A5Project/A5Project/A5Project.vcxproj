@@ -82,9 +82,7 @@
     <ClInclude Include="basic_pointer.h" />
     <ClInclude Include="pointer_fun_black.h" />
     <ClInclude Include="pointer_fun_gold.h" />
-    <ClInclude Include="posn.h" />
     <ClInclude Include="seq-tools.h" />
-    <ClInclude Include="seqio.h" />
     <ClInclude Include="sequence.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="student.h" />
@@ -93,13 +91,11 @@
   <ItemGroup>
     <ClCompile Include="A5Project.cpp" />
     <ClCompile Include="basic_pointer.cpp" />
-    <ClCompile Include="extra-testseq.c" />
     <ClCompile Include="pointer_fun_black.cpp" />
     <ClCompile Include="pointer_fun_gold.cpp" />
     <ClCompile Include="seq-tools.c" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="student.cpp" />
-    <ClCompile Include="test-seqtools.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

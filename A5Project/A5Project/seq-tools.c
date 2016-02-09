@@ -136,18 +136,17 @@ void Sequence_filter(bool (*fp)(int), struct Sequence *seq) {
 
 int Sequence_foldl(int (*fp)(int, int), int base, 
                    const struct Sequence *seq) {
-	return 0;
-	//int len = Sequence_length(seq);
-	//if (len == 0)
-	//	return base;
-	//int pos = 0;
-	//while (pos < Sequence_length(seq))
-	//{
-	//	int item = Sequence_item_at(seq, len-pos-1);
-	//	(*fp)(item, int)
-	//	++pos;
-	//}
+	int pos = Sequence_length(seq) -1;
+	return Sequence_foldl_pos(fp, base, seq, pos);
+}
 
+
+int Sequence_foldl_pos(int(*fp)(int, int), int base, const struct Sequence *seq, int pos)
+{
+	if (pos <= 0)
+		return base;
+	int item = Sequence_item_at(seq, pos);
+	return (*fp)(item, Sequence_foldl_pos(fp, base, seq, --pos));
 }
 
 
@@ -170,9 +169,29 @@ struct Sequence *Sequence_fib(int n) {
 	}
 }
 
+void Sequence_collatz_helper(const struct Sequence *seq, int n)
+{
+	int end_pos = Sequence_length(seq) - 1, factor = 0;
+	if (n == 1) {
+		Sequence_insert_at(seq, end_pos,n);
+		return;
+	}
+	else if (n % 2 == 0) {
+		factor = n / 2;
+	}
+	else {
+		factor = 3 * n + 1;
+	}
+	Sequence_insert_at(seq, end_pos, factor);
+	Sequence_collatz_helper(seq, factor);
+}
+
+
 
 struct Sequence *Sequence_collatz(int n) {
-  return Sequence_create();
+	struct Sequence *seq = Sequence_create();
+	Sequence_collatz_helper(seq, n);
+	return seq;
 }
 
 
@@ -180,17 +199,19 @@ void Sequence_reverse(struct Sequence *seq) {
 	int len = Sequence_length(seq);
 	if (len > 1)
 	{
-		int pos = 0;
+		int pos = 0, end_pos = len - 1;
 		while (pos < len / 2)
 		{
-			int item1 = Sequence_remove_at(seq, pos);
-			int item2 = Sequence_remove_at(seq, len-pos-2);
+			int item1 = Sequence_item_at(seq, pos);
+			int item2 = Sequence_item_at(seq, end_pos);
 
+			Sequence_remove_at(seq, pos);
 			Sequence_insert_at(seq, pos, item2);
-			Sequence_insert_at(seq, len - pos - 2, item1);
+			Sequence_remove_at(seq, end_pos);
+			Sequence_insert_at(seq, end_pos, item1);
 
 			++pos;
-
+			--end_pos;
 		}
 	}
 }

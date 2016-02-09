@@ -71,11 +71,13 @@ void adjust_grade(struct student *s, int original_grade,int new_grade, bool cs)
 	}
 }
 
+// num_cs_course(&s) return number of courses 
 int num_cs_course(const struct student *s)
 {
 	return s->cs_num_fail + s->cs_num_pass;
 }
 
+// cs_average(&s) return cs course avg
 int cs_average(const struct student *s)
 {
 	if (num_cs_course(s) == 0)
@@ -84,20 +86,24 @@ int cs_average(const struct student *s)
 }
 
 
+// num_fail_course(&s) return number of failed courses
 int num_fail_course(const struct student *s)
 {
 	return (s->cs_num_fail  + s->non_cs_num_fail );
 }
+// num_pass_course(&s) return number of passed courses
 int num_pass_course(const struct student *s)
 {
 	return (s->cs_num_pass  + s->non_cs_num_pass);
 }
 
+// num_course(&s) return number of courses
 int num_course(const struct student *s)
 {
 	return (s->cs_num_fail + s->cs_num_pass + s->non_cs_num_fail + s->non_cs_num_pass);
 }
 
+// total_grade(&s) return sum of grade
 int total_grade(const struct student *s)
 {
 	return s->cs_grade + s->non_cs_grade;
@@ -175,6 +181,28 @@ bool can_graduate(const struct student *s)
 //	assert(cs_average(&s) == 70);
 //	assert(cav(&s) == 71);
 //	assert(!can_graduate(&s));
+//	int i = 0;
+//	while (i < 16)
+//	{
+//		take_course(&s, 60, true);
+//		++i;
+//	}
+//
+//	i = 0;
+//	while (i < 26)
+//	{
+//		take_course(&s, 60, false);
+//		++i;
+//	}
+//	printf("num_course %d\n", num_course(&s));
+//	printf("cs_average %d\n", cs_average(&s));
+//	printf("num_fail_course %d\n", num_fail_course(&s));
+//	printf("num_pass_course %d\n", num_pass_course(&s));
+//	printf("num_course %d\n", num_course(&s));
+//	printf("total_grade %d\n", total_grade(&s));
+//
+//	print_status(&s);
+//	print_student(&s);
 //	getchar();
 //	return 0;
 //}

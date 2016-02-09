@@ -9,7 +9,7 @@
 #include "basic_pointer.h"
 #include "pointer_fun_black.h"
 #include "pointer_fun_gold.h"
-#include "posn.h"
+//#include "posn.h"
 #include "student.h"
 
 #include <assert.h>

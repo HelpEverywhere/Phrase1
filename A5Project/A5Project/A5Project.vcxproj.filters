@@ -33,13 +33,7 @@
     <ClInclude Include="pointer_fun_gold.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="posn.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="student.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="seqio.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="seq-tools.h">
@@ -68,13 +62,7 @@
     <ClCompile Include="student.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="extra-testseq.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="seq-tools.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="test-seqtools.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,21 +1,27 @@
-// A5Project.cpp : Defines the entry point for the console application.
-//
 #include "stdafx.h"
-
-int _tmain(int argc, _TCHAR* argv[])
-{
-	struct student s = { 12345 };
-	initialize_new_student(&s);
-	print_status(&s);
-	print_student(&s);
-	assert(student_equals(&s, &s));
-	take_course(&s, 70, true);
-	take_course(&s, 72, false);
-	adjust_grade(&s, 72, 73, false);
-	assert(cs_average(&s) == 70);
-	assert(cav(&s) == 71);
-	assert(!can_graduate(&s));
-	getchar();
-	return 0;
+struct posn {
+	int x;
+	int y;
+};
+void foo(int *p1,int *p2){
+	p1 = p2;
+	*p1 = 25;
+	*p2 = 35;
+	// point A 
 }
-
+void swap(struct posn *p1, struct posn *p2){
+	p1->x = p2->x;
+	p2->x = p1->x;
+	p2->y = p1->y;
+	p1->y = p2->y;
+	//point B
+}
+int _tmain(int argc, _TCHAR* argv[]){
+	int x = 10;
+	int y = 20;
+	foo(&x, &y);
+	struct posn p1 = { 42, 24 };
+	struct posn p2 = { 21, 12 };
+	swap(&p1, &p2);
+	//point C
+}

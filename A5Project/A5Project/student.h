@@ -92,3 +92,24 @@ bool student_equals(const struct student *s1, const struct student *s2);
 //     * have passed at least 40 courses, at least 15 of which must be CS
 //     * have a status of GOOD or EXCL (see above)
 bool can_graduate(const struct student *s);
+
+
+
+// num_cs_course(&s) return number of courses 
+int num_cs_course(const struct student *s);
+
+// cs_average(&s) return cs course avg
+int cs_average(const struct student *s);
+
+
+// num_fail_course(&s) return number of failed courses
+int num_fail_course(const struct student *s);
+
+// num_pass_course(&s) return number of passed courses
+int num_pass_course(const struct student *s);
+
+// num_course(&s) return number of courses
+int num_course(const struct student *s);
+
+// total_grade(&s) return sum of grade
+int total_grade(const struct student *s);
