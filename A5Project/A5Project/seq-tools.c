@@ -143,7 +143,7 @@ int Sequence_foldl(int (*fp)(int, int), int base,
 
 int Sequence_foldl_pos(int(*fp)(int, int), int base, const struct Sequence *seq, int pos)
 {
-	if (pos <= 0)
+	if (pos < 0)
 		return base;
 	int item = Sequence_item_at(seq, pos);
 	return (*fp)(item, Sequence_foldl_pos(fp, base, seq, --pos));
